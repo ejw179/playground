@@ -1,5 +1,7 @@
 ﻿<#
 Git
+https://www.youtube.com/watch?v=PNNinzeFv-4
+https://docs.microsoft.com/en-us/powershell/scripting/core-powershell/vscode/using-vscode?view=powershell-6
 #>
 
 $gitRepo = $env:USERPROFILE + "\dropbox\git\"
