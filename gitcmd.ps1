@@ -8,7 +8,7 @@ $gitRepo = $env:USERPROFILE + "\dropbox\git\"
 cd $gitRepo
 # Play ground Repo - https://github.com/ejw179/playground.git 
 # GEt Repo
-Set-ExecutionPolicy RemoteSigned -Force -
+Set-ExecutionPolicy RemoteSigned -Force
 git clone https://github.com/ejw179/playground.git
 #Edit and Update
 code .
@@ -41,3 +41,18 @@ git log
 git push
 
 
+https://bitbucket.org/ejw179/playground/src/master/
+https://ejw179@bitbucket.org/ejw179/playground.git
+https://github.com/ejw179/playground.git
+
+git config --add remote.all.url https://bitbucket.org/ejw179/playground.git
+git config --add remote.all.url https://github.com/ejw179/playground.git
+
+
+git clone https://ejw179@bitbucket.org/ejw179/bitbucket.git
+
+git revert 52f7f1a
+
+git checkout test
+git checkout master
+git merge test

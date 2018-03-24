@@ -52,16 +52,16 @@ Function        Set-JiraIssueLabel                                 2.5.7      Ji
 Function        Set-JiraUser                                       2.5.7      JiraPS
 Function        Set-JiraVersion                                    2.5.7      JiraPS
 #>
+# Review the help at any time!
+Get-Help about_JiraPS
+Get-Command -Module JiraPS
+Get-Help Get-JiraIssue -Full   # or any other command
+
 Install-Module JiraPS
 Update-Module JiraPS
 Import-Module JiraPS
 Set-JiraConfigServer 'https://jirastaging.benco.com'
 New-JiraSession -Credential $credY
-
-# Review the help at any time!
-Get-Help about_JiraPS
-Get-Command -Module JiraPS
-Get-Help Get-JiraIssue -Full   # or any other command
 
 [array]$Key = $null
 $Output = $null
@@ -71,10 +71,11 @@ line 2
 line 3
 "@
 # Resolve-JiraError : Jira encountered an error: [summary] - The summary is invalid because it contains newline characters
-$Output = New-JiraIssue -Project NOCONOFF -IssueType "NOC - Test Issue Type" -Priority "1" -Summary "Summary Final?" -Description "Test from ps1" -Reporter "eward"
+$Output = New-JiraIssue -Project NOCONOFF -IssueType "NOC - Test Issue Type" -Priority "1" -Summary "Summary Final?" -Description "Test from ps1" -Reporter "eward" 
 $Output.GetTypeCode()
 $Key = $Output -split " " -replace '\[|\]'
 $Key[0]
 Get-JiraIssue -Key $Key[0]
 Add-JiraIssueAttachment -Issue $Key[0] -FilePath C:\Users\sm\Pictures\abstract.jpg
 Add-JiraIssueComment -Issue $Key[0] -Comment "Updated with ps1" 
+
