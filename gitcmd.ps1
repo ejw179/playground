@@ -29,5 +29,13 @@ Posh-Git
 git clone https://github.com/dahlbyk/posh-git.git
 cd .\posh-git
 .\install.ps1
+code .
+git add .
+git commit -m "Day 1.222222"
+git fetch
+git pull 
+git log
+
+git push
 
 
